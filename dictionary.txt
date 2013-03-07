@@ -95,3 +95,5 @@
 ありがたい|grateful|JJ
 。|.|PN
 、|,|PN
+時|time|NN
+日本|Japan|NN
