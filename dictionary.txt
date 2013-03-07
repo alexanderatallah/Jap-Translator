@@ -1,95 +1,95 @@
-日本人,Japanese person,NN
-が,but,RP
-アメリカ,America,NN
-を,,RP
-旅行して,traveling,VB
-面倒,trouble,NN
-だ,,RP
-と,and,RP
-感じる,to feel,VB
-こと,thing,NN
-の,'s,RP
-一つは,for one thing,EX
-チップ,tip,NN
-習慣,custom,NN
-である,is,VB
-例えば,for example,RB
-空港,airport,NN
-から,from,RP
-タクシー,taxi,NN
-で,at,RP
-ホテル,hotel,NN
-に,to,RP
-着く,to arrive,VB
-降りる,to descend,VB
-前,before,RB
-運転手,driver,NN
-渡さなければならない,must ferry across,VB
-ボーイ,boy,NN
-部屋,room,NN
-まで,until,RB
-荷物,luggage,NN
-運んでもらえば,if one receives the act of carrying,VB
-片付けてくれる,to give the act of tidying up,VB
-メイド,maid,NN
-も,also,NN
-食堂,dining room,NN
-食事,meal,NN
-すれば,if so,EX
-ウエーター,waiter,NN
-や,and,RP
-ワイートレス,waitress,NN
-出かける,to depart,VB
-ドアマン,doorman,NN
-呼び止めてくれれば,if one receives the act of challenging,VB
-それ,that,NN
-対して,for,EX
-という,said,EX
-ように,in order to,EX
-何度も,many times over,RB
-取られる,to be taken, VB
-は,the,RP
-ない,is not,VB
-ので,because,RP
-その,that,NN
-点,point,NN
-簡単,simple,JJ
-旅館,Japanese hotel,NN
-泊まれば,if one stays at a hotel,VB
-サービス,service,NN
-料,material,NN
-だいたい,generally,RB
-宿泊料,hotel charges,NN
-十,ten,NN
-パーセント,percent,NN
-決まっていて,is decided,VB
-請求書,bill,NN
-含まれている,is contained,VB
-自分,oneself,NN
-計算しなくて,without calculating,VB
-よい,good,JJ
-高級,high class,NN
-レストラン,restaurant,NN
-料理屋,restaurant,NN
-同じ,same,NN
-普通,general,RB
-すし,sushi,NN
-屋,shop,NN
-そば,soba,NN
-など,et. cetera,RP
-なら,as for,EX
-必要,necessary,JJ
-乗って,get on,VB
-払わなくて,without paying,VB
-いい,good,JJ
-し,because,RP
-床屋,barbershop,NN
-美容院,beauty parlor,NN
-いらない,to not need,NN
-十五,fifteen,NN
-しよう,will do,VB
-か,or,RP
-二十,twenty,NN
-心配しなくて,without worrying,VB
-ほんとうに,really,RB
-ありがたい,grateful,JJ
+日本人 Japanese person NN
+が but RP
+アメリカ  America NN
+を   RP
+旅行して  traveling VB
+面倒  trouble NN
+だ   RP
+と and RP
+感じる to feel VB
+こと  thing  NN
+の 's  RP
+一つは for one thing EX
+チップ tip NN
+習慣  custom  NN
+である is  VB
+例えば for example RB
+空港  airport  NN
+から  from  RP
+タクシー  taxi  NN
+で at  RP
+ホテル hotel NN
+に to  RP
+着く  to arrive VB
+降りる to descend  VB
+前 before  RB
+運転手 driver  NN
+渡さなければならない  must ferry across VB
+ボーイ boy NN
+部屋  room  NN
+まで  until  RB
+荷物  luggage NN
+運んでもらえば if one receives the act of carrying VB
+片付けてくれる to give the act of tidying up VB
+メイド maid  NN
+も also  NN
+食堂  dining room NN
+食事  meal NN
+すれば if so EX
+ウエーター waiter  NN
+や and RP
+ワイートレス	waitress	NN
+出かける	to depart	VB
+ドアマン	doorman	NN
+呼び止めてくれれば	if one receives the act of challenging	VB
+それ	that	NN
+対して	for	EX
+という	said	EX
+ように	in order to	EX
+何度も	many times over	RB
+取られる	to be taken	 VB
+は	the	RP
+ない	is not	VB
+ので	because	RP
+その	that	NN
+点	point	NN
+簡単	simple	JJ
+旅館	Japanese hotel	NN
+泊まれば	if one stays at a hotel	VB
+サービス	service	NN
+料	material	NN
+だいたい	generally	RB
+宿泊料	hotel charges	NN
+十	ten	NN
+パーセント	percent	NN
+決まっていて	is decided	VB
+請求書	bill	NN
+含まれている	is contained	VB
+自分	oneself	NN
+計算しなくて	without calculating	VB
+よい	good	JJ
+高級	high class	NN
+レストラン	restaurant	NN
+料理屋	restaurant	NN
+同じ	same	NN
+普通	general	RB
+すし	sushi	NN
+屋	shop	NN
+そば	soba	NN
+など	et. cetera	RP
+なら	as for	EX
+必要	necessary	JJ
+乗って	get on	VB
+払わなくて	without paying	VB
+いい	good	JJ
+し	because	RP
+床屋	barbershop	NN
+美容院	beauty parlor	NN
+いらない	to not need	NN
+十五	fifteen	NN
+しよう	will do	VB
+か	or	RP
+二十	twenty	NN
+心配しなくて	without worrying	VB
+ほんとうに	really	RB
+ありがたい	grateful	JJ
