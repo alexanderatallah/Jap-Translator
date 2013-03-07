@@ -93,3 +93,5 @@
 心配しなくて	without worrying	VB
 ほんとうに	really	RB
 ありがたい	grateful	JJ
+、 , PN
+。 . PN
