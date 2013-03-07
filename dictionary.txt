@@ -66,7 +66,30 @@
 請求書,bill,NN
 含まれている,is contained,VB
 自分,oneself,NN
-計算しなくて,do not calculate,VB
-よい,good,NN
+計算しなくて,without calculating,VB
+よい,good,JJ
 高級,high class,NN
 レストラン,restaurant,NN
+料理屋,restaurant,NN
+同じ,same,NN
+普通,general,RB
+すし,sushi,NN
+屋,shop,NN
+そば,soba,NN
+など,et. cetera,RP
+なら,as for,EX
+必要,necessary,JJ
+乗って,get on,VB
+払わなくて,without paying,VB
+いい,good,JJ
+し,because,RP
+床屋,barbershop,NN
+美容院,beauty parlor,NN
+いらない,to not need,NN
+十五,fifteen,NN
+しよう,will do,VB
+か,or,RP
+二十,twenty,NN
+心配しなくて,without worrying,VB
+ほんとうに,really,RB
+ありがたい,grateful,JJ
