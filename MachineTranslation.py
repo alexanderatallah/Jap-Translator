@@ -4,7 +4,7 @@ def initDicts(f):
   d = {}
   partsOfSpeech = {}
   for line in f:
-    (f, e, pos) = line.split(',')
+    (f, e, pos) = line.split('|')
     d[f] = e
     partsOfSpeech[e] = pos
   return (d, partsOfSpeech)
