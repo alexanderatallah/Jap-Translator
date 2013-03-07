@@ -26,7 +26,8 @@ def printEnglish(words, partsOfSpeech):
     if prevWord == "." or prevWord == "":
       word = word[0].upper() + word[1:]
 
-    if prevWord == "" or word == "'s" or (word in partsOfSpeech and partsOfSpeech[word] == "PN"):
+    if prevWord == "" or word == "'s" or \
+      (word in partsOfSpeech and partsOfSpeech[word] == "PN"):
       output += word
     else: output += " " + word
 
