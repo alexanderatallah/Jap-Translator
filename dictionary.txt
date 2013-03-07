@@ -1,0 +1,34 @@
+日本人,Japanese person,NN
+が,but,RP
+アメリカ,America,NN
+を,,RP
+旅行して,traveling,VB
+面倒,trouble,NN
+だ,,RP
+と,and,RP
+感じる,to feel,VB
+こと,thing,NN
+の,'s,RP
+一つは,for one thing,RB
+チップ,tip,NN
+習慣,custom,NN
+である,to be,VB
+例えば,for example,RB
+空港,airport,NN
+から,from,RP
+タクシー,taxi,NN
+で,at,RP
+ホテル,hotel,NN
+に,to,RP
+着く,to arrive,VB
+降りる,to descend,VB
+前,before,RB
+運転手,driver,NN
+渡さなければならない,must ferry across,VB
+ボーイ,boy,NN
+部屋,room,NN
+まで,until,RB
+荷物,luggage,NN
+運んで,carrying,VB
+もらえば,if one receives,VB
+片付けて,tidying up,VB
