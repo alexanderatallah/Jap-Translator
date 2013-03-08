@@ -16,6 +16,7 @@ def reorder(words, partsOfSpeech):
   partsOfSpeech["a"] = partsOfSpeech["an"] = "RP"
   partsOfSpeech["when"] = "RP"
   partsOfSpeech["then"] = "RP"
+  partsOfSpeech["is ok"] = "VB"
 
   sentences = listSplit(words, ".", True)
   newWords = []
@@ -69,6 +70,16 @@ def reorder(words, partsOfSpeech):
         and partsOfSpeech[(nextWord(i+1, sen))] == "NN":
         print sen[i+1]
         sen.pop(i+1)
+
+      # Place adjectives occuring after two nouns before the closest noun
+      if partsOfSpeech[sen[i]] == "JJ" and partsOfSpeech[prevWord(i, sen)] == "NN" \
+        and partsOfSpeech[(prevWord(i-1, sen))] == "NN" and partsOfSpeech[nextWord(i+1, sen)] != "PN":
+        moveWord(i, i-1, sen)
+
+      # If word is "good" and previous word is a verb or "also" and then a verb, change it to "is ok."
+      if sen[i] == "good" and (partsOfSpeech[prevWord(i, sen)] == "VB" or \
+        (partsOfSpeech[prevWord(i-1, sen)] == "VB" and sen[i-1] == "also")):
+        sen[i] = "is ok"
 
       i+=1
     newWords += sen

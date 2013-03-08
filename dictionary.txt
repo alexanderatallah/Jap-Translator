@@ -2,7 +2,7 @@
 が|but|RP
 アメリカ|America|NN
 を||RP
-旅行して|traveling|NN
+旅行して|traveling|JJ
 面倒|trouble|NN
 だ||VB
 と|and|RP
