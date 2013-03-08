@@ -49,6 +49,12 @@ def moveWord(idxDest, idxSource, lista):
   source = lista.pop(idxSource)
   lista.insert(idxDest, source)
 
+def moveToClauseStart(idxSource, sentence):
+  idxDest = idxSource
+  while (idxDest > 0 and sentence[idxDest - 1] != ","):
+    idxDest -= 1
+  moveWord(idxDest, idxSource, sentence)
+
 def reverseSentence(sentence):
   clauses = listSplit(sentence, ",")
   reversedSentence = []
