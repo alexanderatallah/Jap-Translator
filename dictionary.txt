@@ -6,9 +6,8 @@
 面倒|trouble|NN
 だ||RP
 と|and|RP
-感じる|to feel|VB
-こと|thing|NN
-の|'s|RP
+感じること|feeling|VB
+の|of|RP
 一つは|for one thing|EX
 チップ|tip|NN
 習慣|custom|NN
