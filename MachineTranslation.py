@@ -30,8 +30,7 @@ def reverseSentence(sentence):
       reversedSentence += clause[:-1:-1] + ["."]
     else:
       reversedSentence += clause[::-1]
-
-
+  return reversedSentence
 
 def listSplit(lista, splitter, includeSplitter = False):
   superlist = []
