@@ -38,7 +38,7 @@
 すれば|if so|EX
 ウエーター|waiter|NN
 や|and|RP
-ワイートレス|waitress|NN
+ワエートレス|waitress|NN
 出かける|to depart|VB
 ドアマン|doorman|NN
 呼び止めてくれれば|if one receives the act of challenging|VB

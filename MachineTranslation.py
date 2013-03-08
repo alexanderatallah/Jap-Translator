@@ -1,4 +1,4 @@
-import sys, collections
+import sys, collections, getopt
 
 def initDicts(f):
   d = {}
@@ -32,13 +32,14 @@ def getSentences(words):
       sentence = []
   return sentences
 
-def printEnglish(words, partsOfSpeech):
+def printEnglish(words, partsOfSpeech, printPOS = False):
   output = ""
   for i in xrange(len(words)):
     word = words[i]
     ######### COMMENT THIS OUT TO GET ACTUAL TRANSLATION ###########
     ######### DEBUG MODE ###########
-    word += ":" + partsOfSpeech[word]
+    if printPOS:
+      word += ":" + partsOfSpeech[word]
     ######### END ############
     prevWord = words[i-1] if i > 0 else ""
     if prevWord == "." or prevWord == "":
@@ -52,6 +53,11 @@ def printEnglish(words, partsOfSpeech):
   print output
 
 def main():
+  printPOS = False
+  (options, args) = getopt.getopt(sys.argv[1:], 't')
+  if ('-t','') in options:
+    printPOS = True
+  
   d, p = initDicts(open("dictionary.txt"))
   japanese = open("japanese_text_segmented.txt")
   english = []
@@ -62,7 +68,7 @@ def main():
         if d[w]: english.append(d[w])
       else: english.append("NOT_IN_DICT:" + w)
   reorder(english, p)
-  printEnglish(english, p)
+  printEnglish(english, p, printPOS)
 
 if __name__ == '__main__':
   main()
