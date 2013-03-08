@@ -4,7 +4,7 @@
 を||RP
 旅行して|traveling|VB
 面倒|trouble|NN
-だ||RP
+だ|is|VB
 と|and|RP
 感じること|feeling|NN
 の|of|RP
