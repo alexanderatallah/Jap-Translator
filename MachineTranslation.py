@@ -14,20 +14,36 @@ def reorder(words, partsOfSpeech):
   newWords = []
   for sentence in sentences:
     sen = sentence
-    # sen = reverseSentence(sentence)
     i = 0
     while(i < len(sen)):
-      word = sen[i] # DON'T APPEND WORD TO NEWWORDS, USE SEN[i]
-      prevWord = sen[i-1] if i > 0 else ""
-      nextWord = sen[i+1] if i < len(sen) - 1 else ""
-      nextNextWord = sen[i+2] if i < len(sen) - 2 else ""
-      if partsOfSpeech[word] == "NN" and partsOfSpeech[nextWord] == "RP":
+      if partsOfSpeech[sen[i]] == "NN" and partsOfSpeech[nextWord(i, sen)] == "RP" and nextWord(i, sen) != "and":
         sen[i], sen[i+1] = sen[i+1], sen[i]
+
+      if sen[i] == "of" and partsOfSpeech[nextWord(i, sen)] == "NN" and partsOfSpeech[nextNextWord(i, sen)] == "NN":
+        sen[i], sen[i+1], sen[i+2] = sen[i+2], sen[i], sen[i+1]
+
+      if sen[i] == "but" and partsOfSpeech[nextWord(i, sen)] == "NN":
+        sen[i] = "the"
+
+      if sen[i] == "and" and partsOfSpeech[prevWord(i, sen)] == "VB":
+        sen[i] = "then"
+
+      #if sen[i] == "because" and partsOfSpeech[nextWord(i, sen)] == "PN":
+        #moveWord(i, 0, sen)
 
       newWords.append(sen[i])
       i+=1
 
   return newWords
+
+def prevWord(i, sen):
+  return sen[i-1] if i > 0 else ""
+
+def nextWord(i, sen):
+  return sen[i+1] if i < len(sen) - 1 else ""
+
+def nextNextWord(i, sen):
+  return sen[i+2] if i < len(sen) - 2 else ""
 
 def moveWord(idxDest, idxSource, lista):
   source = lista.pop(idxSource)
