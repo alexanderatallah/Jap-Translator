@@ -15,19 +15,19 @@ def reorder(words, partsOfSpeech):
   for sen in sentences:
     i = 0
     while(i < len(sen)):
-      # Switch any instance of NN, RP to RP, NN, except when RP is “of”.
+      # Switch any instance of NN, RP to RP, NN, except when RP is "of".
       if partsOfSpeech[sen[i]] == "NN" and partsOfSpeech[nextWord(i, sen)] == "RP" and nextWord(i, sen) != "and":
         sen[i], sen[i+1] = sen[i+1], sen[i]
 
-      # Look for the existence of “of” and switch the nouns on either side of the “of”.
+      # Look for the existence of "of" and switch the nouns on either side of the "of".
       if sen[i] == "of" and partsOfSpeech[nextWord(i, sen)] == "NN" and partsOfSpeech[nextNextWord(i, sen)] == "NN":
         sen[i], sen[i+1], sen[i+2] = sen[i+2], sen[i], sen[i+1]
 
-      # Look for the existence of “but”: if it comes after a noun or noun phrase, change it to “the”.
+      # Look for the existence of "but": if it comes after a noun or noun phrase, change it to "the".
       if sen[i] == "but" and partsOfSpeech[nextWord(i, sen)] == "NN":
         sen[i] = "the"
 
-      # Look for the existence of “and”: if it comes before a verb, change it to “when”. If it comes after a verb, change it to “then”.
+      # Look for the existence of "and": if it comes before a verb, change it to "when". If it comes after a verb, change it to "then".
       if sen[i] == "and":
         if partsOfSpeech[prevWord(i, sen)] == "VB":
           sen[i] = "when"
@@ -36,7 +36,7 @@ def reorder(words, partsOfSpeech):
           sen[i] = "then"
           partsOfSpeech["then"] = "RP"
 
-      # Look for the existence of “because”. Move it to the beginning of the clause.
+      # Look for the existence of "because". Move it to the beginning of the clause.
       if sen[i] == "because" and partsOfSpeech[nextWord(i, sen)] == "PN":
         moveToClauseStart(i, sen)
 
