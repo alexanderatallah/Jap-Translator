@@ -13,11 +13,12 @@ def reorder(words, partsOfSpeech):
   sentences = listSplit(words, ".", True)
   newWords = []
   for sentence in sentences:
-    sentence = reverseSentence(sentence)
-    for i in xrange(len(sentence)):
-      word = sentence[i]
-      prevWord = sentence[i-1] if i > 0 else ""
-      nextWord = sentence[i+1] if i < len(sentence) - 1 else ""
+    sen = sentence
+    # sen = reverseSentence(sentence)
+    for i in xrange(len(sen)):
+      word = sen[i]
+      prevWord = sen[i-1] if i > 0 else ""
+      nextWord = sen[i+1] if i < len(sen) - 1 else ""
       newWords.append(word)
 
   return newWords
@@ -27,9 +28,10 @@ def reverseSentence(sentence):
   reversedSentence = []
   for clause in clauses:
     if clause[-1] == ".":
-      reversedSentence += clause[:-1:-1] + ["."]
+      reversedSentence = reversedSentence + clause[-2::-1] + ["."]
     else:
-      reversedSentence += clause[::-1]
+      reversedSentence = reversedSentence + clause[::-1] + [","]
+  # import pdb; pdb.set_trace()
   return reversedSentence
 
 def listSplit(lista, splitter, includeSplitter = False):
@@ -42,6 +44,7 @@ def listSplit(lista, splitter, includeSplitter = False):
       sublist = []
       continue
     sublist.append(item)
+  if len(sublist) > 0: superlist.append(sublist)
   return superlist
 
 def printEnglish(words, partsOfSpeech, printPOS = False):
@@ -76,7 +79,7 @@ def main():
       if w in d:
         if d[w]: english.append(d[w])
       else: english.append("NOT_IN_DICT:" + w)
-  reorder(english, p)
+  english = reorder(english, p)
   printEnglish(english, p, printPOS)
 
 if __name__ == '__main__':
