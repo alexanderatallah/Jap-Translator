@@ -27,8 +27,10 @@ def reorder(words, partsOfSpeech):
       if sen[i] == "and":
         if partsOfSpeech[prevWord(i, sen)] == "VB":
           sen[i] = "when"
+          partsOfSpeech["when"] = "RP"
         if partsOfSpeech[nextWord(i, sen)] == "VB":
           sen[i] = "then"
+          partsOfSpeech["then"] = "RP"
 
       if sen[i] == "because" and partsOfSpeech[nextWord(i, sen)] == "PN":
         moveToClauseStart(i, sen)
