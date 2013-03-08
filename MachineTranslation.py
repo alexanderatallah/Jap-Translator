@@ -59,6 +59,17 @@ def reorder(words, partsOfSpeech):
         # print sen[i-3] + " " + sen[i-2] + " " + sen[i-1] + " " + sen[i]
         moveWord(i, i-3, sen)
 
+      # If a verb is preceded by an adjective and before that a noun, place it before the adjective
+      if partsOfSpeech[sen[i]] == "VB" and partsOfSpeech[prevWord(i, sen)] == "JJ" \
+        and partsOfSpeech[nextWord(i, sen)] == "PN":
+        moveWord(i, i-1, sen)
+
+      # If an adjective is followed by a particle and a noun, then delete the particle
+      if partsOfSpeech[sen[i]] == "JJ" and partsOfSpeech[nextWord(i, sen)] == "RP" \
+        and partsOfSpeech[(nextWord(i+1, sen))] == "NN":
+        print sen[i+1]
+        sen.pop(i+1)
+
       i+=1
     newWords += sen
 
