@@ -15,13 +15,23 @@ def reorder(words, partsOfSpeech):
   for sentence in sentences:
     sen = sentence
     # sen = reverseSentence(sentence)
-    for i in xrange(len(sen)):
-      word = sen[i]
+    i = 0
+    while(i < len(sen)):
+      word = sen[i] # DON'T APPEND WORD TO NEWWORDS, USE SEN[i]
       prevWord = sen[i-1] if i > 0 else ""
       nextWord = sen[i+1] if i < len(sen) - 1 else ""
-      newWords.append(word)
+      nextNextWord = sen[i+2] if i < len(sen) - 2 else ""
+      if partsOfSpeech[word] == "NN" and partsOfSpeech[nextWord] == "RP":
+        sen[i], sen[i+1] = sen[i+1], sen[i]
+
+      newWords.append(sen[i])
+      i+=1
 
   return newWords
+
+def moveWord(idxDest, idxSource, lista):
+  source = lista.pop(idxSource)
+  lista.insert(idxDest, source)
 
 def reverseSentence(sentence):
   clauses = listSplit(sentence, ",")
