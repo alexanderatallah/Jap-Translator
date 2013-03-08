@@ -12,8 +12,7 @@ def initDicts(f):
 def reorder(words, partsOfSpeech):
   sentences = listSplit(words, ".", True)
   newWords = []
-  for sentence in sentences:
-    sen = sentence
+  for sen in sentences:
     i = 0
     while(i < len(sen)):
       if partsOfSpeech[sen[i]] == "NN" and partsOfSpeech[nextWord(i, sen)] == "RP" and nextWord(i, sen) != "and":
@@ -31,8 +30,8 @@ def reorder(words, partsOfSpeech):
       #if sen[i] == "because" and partsOfSpeech[nextWord(i, sen)] == "PN":
         #moveWord(i, 0, sen)
 
-      newWords.append(sen[i])
       i+=1
+    newWords += sen
 
   return newWords
 
