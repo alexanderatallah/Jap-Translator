@@ -97,7 +97,7 @@
 、|,|PN
 時|time|NN
 日本|Japan|NN
-アメリカ人｜American person|NN
+アメリカ人|American person|NN
 や|and|RP
 払う|to pay|VB
 のに|although|RP
