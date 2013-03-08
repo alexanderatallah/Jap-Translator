@@ -28,10 +28,10 @@
 部屋|room|NN
 まで|until|RB
 荷物|luggage|NN
-運んでもらえば|if one receives the act of carrying|VB
+運んでもらえば|if one receives the act of carrying|RB
 片付けてくれる|to give the act of tidying up|VB
 メイド|maid|NN
-も|also|NN
+も|also|RB
 食堂|dining room|NN
 食事|meal|NN
 すれば|if so|EX
@@ -40,7 +40,7 @@
 ウエートレス|waitress|NN
 出かける|to depart|VB
 ドアマン|doorman|NN
-呼び止めてくれれば|if one receives the act of challenging|VB
+呼び止めてくれれば|if one receives the act of challenging|RB
 それ|that|NN
 対して|for|EX
 という|said|EX
@@ -55,7 +55,7 @@
 点|point|NN
 簡単|simple|JJ
 旅館|Japanese hotel|NN
-泊まれば|if one stays at a hotel|VB
+泊まれば|if one stays at a hotel|RB
 サービス|service|NN
 料|material|NN
 だいたい|generally|RB
@@ -85,11 +85,11 @@
 し|because|RP
 床屋|barbershop|NN
 美容院|beauty parlor|NN
-いらない|to not need|NN
-十五|fifteen|NN
+いらない|to not need|VB
+十五|fifteen|JJ
 しよう|will do|VB
 か|or|RP
-二十|twenty|NN
+二十|twenty|JJ
 心配しなくて|without worrying|VB
 ほんとうに|really|RB
 ありがたい|grateful|JJ

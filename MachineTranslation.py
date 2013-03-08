@@ -1,5 +1,7 @@
 import sys, collections, getopt
 
+VOWELS = ["a", "e", "i", "o", "u"]
+
 def initDicts(f):
   d = {}
   partsOfSpeech = {"": None}
@@ -10,6 +12,11 @@ def initDicts(f):
   return (d, partsOfSpeech)
 
 def reorder(words, partsOfSpeech):
+  partsOfSpeech["is"] = "VB"
+  partsOfSpeech["a"] = partsOfSpeech["an"] = "RP"
+  partsOfSpeech["when"] = "RP"
+  partsOfSpeech["then"] = "RP"
+
   sentences = listSplit(words, ".", True)
   newWords = []
   for sen in sentences:
@@ -20,7 +27,7 @@ def reorder(words, partsOfSpeech):
         sen[i], sen[i+1] = sen[i+1], sen[i]
 
       # Look for the existence of "of" and switch the nouns on either side of the "of".
-      if sen[i] == "of" and partsOfSpeech[nextWord(i, sen)] == "NN" and partsOfSpeech[nextNextWord(i, sen)] == "NN":
+      if sen[i] == "of" and partsOfSpeech[nextWord(i, sen)] == "NN" and partsOfSpeech[nextWord(i+1, sen)] == "NN":
         sen[i], sen[i+1], sen[i+2] = sen[i+2], sen[i], sen[i+1]
 
       # Look for the existence of "but": if it comes after a noun or noun phrase, change it to "the".
@@ -31,14 +38,26 @@ def reorder(words, partsOfSpeech):
       if sen[i] == "and":
         if partsOfSpeech[prevWord(i, sen)] == "VB":
           sen[i] = "when"
-          partsOfSpeech["when"] = "RP"
         if partsOfSpeech[nextWord(i, sen)] == "VB":
           sen[i] = "then"
-          partsOfSpeech["then"] = "RP"
 
       # Look for the existence of "because". Move it to the beginning of the clause.
       if sen[i] == "because" and partsOfSpeech[nextWord(i, sen)] == "PN":
         moveToClauseStart(i, sen)
+
+      # Look for nouns followed by commas; change these nouns to "is a [noun]"
+      if partsOfSpeech[sen[i]] == "NN" and partsOfSpeech[nextWord(i, sen)] == "PN" \
+        and partsOfSpeech[(prevWord(i, sen))] not in ["RP", "NN"]:
+        # print sen[i-3] + " " + sen[i-2] + " " + sen[i-1] + " " + sen[i] + " " + sen[i+1]
+        sen.insert(i, "an") if nextWord(i, sen)[0].lower() in VOWELS else sen.insert(i, "a")
+        sen.insert(i, "is")
+        i += 2
+
+      # Switch nouns or adjectives followed by verbs to verbs followed by nouns or adjectives.
+      if partsOfSpeech[sen[i]] == "VB" and partsOfSpeech[prevWord(i, sen)] in ["JJ", "NN"] \
+        and partsOfSpeech[prevWord(i-1, sen)] == "RP" and partsOfSpeech[prevWord(i-2, sen)] == "NN":
+        # print sen[i-3] + " " + sen[i-2] + " " + sen[i-1] + " " + sen[i]
+        moveWord(i, i-3, sen)
 
       i+=1
     newWords += sen
@@ -51,10 +70,7 @@ def prevWord(i, sen):
 def nextWord(i, sen):
   return sen[i+1] if i < len(sen) - 1 else ""
 
-def nextNextWord(i, sen):
-  return sen[i+2] if i < len(sen) - 2 else ""
-
-def moveWord(idxDest, idxSource, lista):
+def moveWord(idxSource, idxDest, lista):
   source = lista.pop(idxSource)
   lista.insert(idxDest, source)
 
@@ -62,7 +78,7 @@ def moveToClauseStart(idxSource, sentence):
   idxDest = idxSource
   while (idxDest > 0 and sentence[idxDest - 1] != ","):
     idxDest -= 1
-  moveWord(idxDest, idxSource, sentence)
+  moveWord(idxSource, idxDest, sentence)
 
 def reverseSentence(sentence):
   clauses = listSplit(sentence, ",")
