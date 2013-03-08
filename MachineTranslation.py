@@ -10,10 +10,10 @@ def initDicts(f):
   return (d, partsOfSpeech)
 
 def reorder(words, partsOfSpeech):
-  sentences = getSentences(words)
+  sentences = listSplit(words, ".", True)
   newWords = []
   for sentence in sentences:
-
+    sentence = reverseSentence(sentence)
     for i in xrange(len(sentence)):
       word = sentence[i]
       prevWord = sentence[i-1] if i > 0 else ""
@@ -22,25 +22,35 @@ def reorder(words, partsOfSpeech):
 
   return newWords
 
-def getSentences(words):
-  sentences = []
-  sentence = []
-  for word in words:
-    sentence.append(word)
-    if word == ".":
-      sentences.append(sentence[:])
-      sentence = []
-  return sentences
+def reverseSentence(sentence):
+  clauses = listSplit(sentence, ",")
+  reversedSentence = []
+  for clause in clauses:
+    if clause[-1] == ".":
+      reversedSentence += clause[:-1:-1] + ["."]
+    else:
+      reversedSentence += clause[::-1]
+
+
+
+def listSplit(lista, splitter, includeSplitter = False):
+  superlist = []
+  sublist = []
+  for item in lista:
+    if item == splitter:
+      if includeSplitter: sublist.append(item)
+      superlist.append(sublist)
+      sublist = []
+      continue
+    sublist.append(item)
+  return superlist
 
 def printEnglish(words, partsOfSpeech, printPOS = False):
   output = ""
   for i in xrange(len(words)):
     word = words[i]
-    ######### COMMENT THIS OUT TO GET ACTUAL TRANSLATION ###########
-    ######### DEBUG MODE ###########
     if printPOS:
       word += ":" + partsOfSpeech[word]
-    ######### END ############
     prevWord = words[i-1] if i > 0 else ""
     if prevWord == "." or prevWord == "":
       word = word[0].upper() + word[1:]
