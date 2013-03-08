@@ -24,11 +24,14 @@ def reorder(words, partsOfSpeech):
       if sen[i] == "but" and partsOfSpeech[nextWord(i, sen)] == "NN":
         sen[i] = "the"
 
-      if sen[i] == "and" and partsOfSpeech[prevWord(i, sen)] == "VB":
-        sen[i] = "then"
+      if sen[i] == "and":
+        if partsOfSpeech[prevWord(i, sen)] == "VB":
+          sen[i] = "then"
+        if partsOfSpeech[nextWord(i, sen)] == "VB":
+          sen[i] = "when"
 
-      #if sen[i] == "because" and partsOfSpeech[nextWord(i, sen)] == "PN":
-        #moveWord(i, 0, sen)
+      if sen[i] == "because" and partsOfSpeech[nextWord(i, sen)] == "PN":
+        moveToClauseStart(i, sen)
 
       i+=1
     newWords += sen
