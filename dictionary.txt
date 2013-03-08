@@ -6,7 +6,7 @@
 面倒|trouble|NN
 だ||RP
 と|and|RP
-感じること|feeling|VB
+感じること|feeling|NN
 の|of|RP
 一つは|for one thing|EX
 チップ|tip|NN
@@ -46,7 +46,8 @@
 という|said|EX
 ように|in order to|EX
 何度も|many times over|RB
-取られる|to be taken| VB
+取られる|to be taken|VB
+取られること|the act of being taken|NN
 は|the|RP
 ない|is not|VB
 ので|because|RP
