@@ -97,3 +97,17 @@
 、|,|PN
 時|time|NN
 日本|Japan|NN
+アメリカ人｜American person|NN
+や|and|RP
+払う|to pay|VB
+のに|although|RP
+慣れている|is accustomed|VB
+払わない|to not pay|VB
+悪くなる|become bad|VB
+なる|to become|VB
+心配|to worry|VB
+かもしれない|maybe|EX
+でも|but|RP
+比べて|compared to|EX
+むしろ|rather|RB
+言える|to be possible to say|VB
